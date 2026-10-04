@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arwin Estates & Properties | Bengaluru Prime Real Estate</title>
+  <style>
+    :root {
+      --bg-light: #ffffff;
+      --card-bg: #f8fafc;
+      --accent-gold: #b8860b;
+      --accent-orange: #d97706;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    /* Top Announcement Bar */
+    .top-bar {
+      background: #f1f5f9;
+      padding: 8px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-muted);
+    }
+
+    .top-bar a {
+      color: var(--text-main);
+      text-decoration: none;
+      margin-right: 15px;
+      font-weight: 500;
+    }
+
+    .whatsapp-btn {
+      background: #25d366;
+      color: #fff !important;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    /* Navbar */
+    header {
+      background: rgba(255, 255, 255, 0.98);
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-badge {
+      background: var(--accent-orange);
+      color: #ffffff;
+      font-weight: 800;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 1.1rem;
+    }
+
+    .logo-text h2 {
+      font-size: 1.2rem;
+      color: var(--accent-gold);
+      letter-spacing: 1px;
+    }
+
+    .logo-text p {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .contact-advisory-btn {
+      background: var(--accent-orange);
+      color: #ffffff;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 70px 20px 40px;
+      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    }
+
+    .badge-trust {
+      display: inline-block;
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      background: #fefce8;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      color: var(--text-main);
+      margin-bottom: 15px;
+      font-family: 'Georgia', serif;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: 1rem;
+    }
+
+    /* Filter Bar */
+    .filter-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .filter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .filter-group label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+      text-align: left;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .filter-group select {
+      width: 100%;
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 10px;
+      border-radius: 6px;
+    }
+
+    .filter-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .btn-filter {
+      background: var(--accent-orange);
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* Container */
+    .section-container {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .section-header {
+      margin-bottom: 30px;
+    }
+
+    .section-header h3 {
+      color: var(--accent-orange);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+      font-family: 'Georgia', serif;
+      color: var(--text-main);
+    }
+
+    /* Property Portfolio Grid */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+    }
+
+    .property-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .property-img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .property-tag {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: rgba(255,255,255,0.92);
+      color: var(--accent-gold);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .price-badge {
+      position: absolute;
+      top: 150px;
+      left: 15px;
+      background: var(--text-main);
+      color: #ffffff;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-weight: 800;
+    }
+
+    .property-body {
+      padding: 20px;
+    }
+
+    .property-location {
+      font-size: 0.8rem;
+      color: var(--accent-orange);
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .property-title {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: var(--text-main);
+    }
+
+    .property-details {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-color);
+      padding-top: 12px;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .btn-view {
+      width: 100%;
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .btn-view:hover {
+      background: var(--text-main);
+      color: #ffffff;
+    }
+
+    /* Modal Overlay & Details Box */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 30px;
+      position: relative;
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 1.8rem;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+
+    .modal-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .modal-gallery img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .modal-spec-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin: 20px 0;
+      background: #f8fafc;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
+    .modal-spec-item {
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .modal-spec-item strong {
+      color: var(--accent-gold);
+    }
+
+    /* Calculator Section */
+    .calculator-card {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .emi-display {
+      font-size: 2.2rem;
+      color: var(--accent-gold);
+      font-weight: 800;
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 10px;
+      border-radius: 6px;
+    }
+
+    .btn-submit {
+      background: var(--accent-orange);
+      color: #ffffff;
+      border: none;
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* Footer */
+    footer {
+      background: #f8fafc;
+      border-top: 1px solid var(--border-color);
+      padding: 40px 5%;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media(max-width: 768px) {
+      .calculator-card, .contact-grid { grid-template-columns: 1fr; }
+      nav ul { display: none; }
+      .modal-spec-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Info Bar -->
+  <div class="top-bar">
+    <div>
+      <a href="tel:9916643255">📞 +91 99166 43255</a>
+      <a href="mailto:arwinrealtors@gmail.com">✉ arwinrealtors@gmail.com</a>
+      <span>👤 Sanjeev Bajoria (Proprietor)</span>
+    </div>
+    <div>
+      <span>🛡️ 30+ Years Bengaluru Legacy (Estd. 1995)</span>
+      <a href="https://wa.me/919916643255" class="whatsapp-btn">WhatsApp Us</a>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header>
+    <div class="logo-container">
+      <div class="logo-badge">AE</div>
+      <div class="logo-text">
+        <h2>Arwin Estates</h2>
+        <p>AND PROPERTIES • BENGALURU</p>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#portfolio">Featured Properties</a></li>
+        <li><a href="#markets">Micro-Markets</a></li>
+        <li><a href="#calculator">KA Stamp Duty & EMI</a></li>
+        <li><a href="#contact" class="contact-advisory-btn">CONTACT ADVISORY</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="badge-trust">🛡️ ESTD. 1995 • 30+ YEARS OF UNMATCHED TRUST IN BENGALURU</div>
+    <h1>Bengaluru's Trusted Real Estate<br>Partner Since 1995</h1>
+    <p>Led by Founder Sanjeev Bajoria. Specialized in JDA Structuring, Outright Land Aggregation, Commercial & High-Value Residential Sales.</p>
+
+    <!-- Filter Card -->
+    <div class="filter-card">
+      <div class="filter-grid">
+        <div class="filter-group">
+          <label>Micro-Market / Locality</label>
+          <select><option>All Bengaluru Localities</option></select>
+        </div>
+        <div class="filter-group">
+          <label>Property / Deal Type</label>
+          <select><option>All Deal Typologies</option></select>
+        </div>
+        <div class="filter-group">
+          <label>Max Budget</label>
+          <select><option>Any Budget</option></select>
+        </div>
+        <div class="filter-group">
+          <label>BHK / Specification</label>
+          <select><option>Any Configuration</option></select>
+        </div>
+      </div>
+      <div class="filter-actions">
+        <button class="btn-filter">FILTER RESIDENCES</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Portfolio Section -->
+  <section id="portfolio" class="section-container">
+    <div class="section-header">
+      <h3>BENGALURU PRIME OFFERINGS</h3>
+      <h2>Featured Portfolio</h2>
+    </div>
+
+    <div class="portfolio-grid">
+      
+      <!-- 4BHK Duplex Property Card -->
+      <div class="property-card">
+        <span class="property-tag">LUXURY DUPLEX</span>
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80" alt="4BHK Duplex Elevation" class="property-img">
+        <div class="price-badge">₹ 5.00 Cr</div>
+        <div class="property-body">
+          <div class="property-location">📍 BENGALURU CENTRAL • OUTRIGHT SALE</div>
+          <h3 class="property-title">Brand New 4 BHK Duplex Residence</h3>
+          <div class="property-details">
+            <span>🛏️ 4 BHK Duplex</span>
+            <span>📐 4,500 sqft</span>
+          </div>
+          <button class="btn-view" onclick="openDetailsModal()">VIEW DETAILS →</button>
+        </div>
+      </div>
+
+      <!-- Listing 2 -->
+      <div class="property-card">
+        <span class="property-tag">INDEPENDENT PLOT</span>
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" alt="Indiranagar Plot" class="property-img">
+        <div class="price-badge">₹ 14.50 Cr</div>
+        <div class="property-body">
+          <div class="property-location">📍 INDIRANAGAR • OUTRIGHT SALE / JDA</div>
+          <h3 class="property-title">Indiranagar 100ft Road Bungalow Plot</h3>
+          <div class="property-details">
+            <span>🏷️ A-Khata Plot</span>
+            <span>📐 4,800 sqft</span>
+          </div>
+          <button class="btn-view">VIEW DETAILS →</button>
+        </div>
+      </div>
+
+      <!-- Listing 3 -->
+      <div class="property-card">
+        <span class="property-tag">LUXURY VILLA</span>
+        <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=600&q=80" alt="Dollars Colony Villa" class="property-img">
+        <div class="price-badge">₹ 18.00 Cr</div>
+        <div class="property-body">
+          <div class="property-location">📍 DOLLARS COLONY • OUTRIGHT SALE</div>
+          <h3 class="property-title">Dollars Colony Luxury Mansion</h3>
+          <div class="property-details">
+            <span>🛏️ 5 BHK Villa</span>
+            <span>📐 7,200 sqft</span>
+          </div>
+          <button class="btn-view">VIEW DETAILS →</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Property Details Modal (Opens on Clicking VIEW DETAILS) -->
+  <div class="modal-overlay" id="detailsModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeDetailsModal()">&times;</span>
+      <h3 style="color: var(--accent-orange); font-size: 0.85rem;">PREMIUM PROPERTY SPECIFICATIONS</h3>
+      <h2 style="color: var(--accent-gold); margin-bottom: 10px;">Brand New 4 BHK Duplex Residence</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Price: <strong>₹ 5.00 Crore</strong> | Location: Bengaluru Central</p>
+
+      <!-- Working Photo Gallery inside View Details -->
+      <div class="modal-gallery">
+        <div>
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80" alt="Elevation Exterior">
+          <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 4px;">Elevation Exterior</p>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" alt="Living Room / Interior">
+          <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 4px;">Living Room / Interior</p>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=600&q=80" alt="Amenities Pool View">
+          <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 4px;">Amenities Pool View</p>
+        </div>
+      </div>
+
+      <!-- Detailed Specs -->
+      <div class="modal-spec-grid">
+        <div class="modal-spec-item"><strong>Floor Levels:</strong> 3rd & 4th Floor (Duplex)</div>
+        <div class="modal-spec-item"><strong>Orientation:</strong> East Facing</div>
+        <div class="modal-spec-item"><strong>Flooring:</strong> Italian Marble Flooring</div>
+        <div class="modal-spec-item"><strong>Parking:</strong> 5 Covered Car Parking Slots</div>
+        <div class="modal-spec-item"><strong>Servant Quarters:</strong> Basement Servant Room</div>
+        <div class="modal-spec-item"><strong>Power & Water:</strong> 24/7 Power Backup & Water Supply</div>
+        <div class="modal-spec-item"><strong>Community Amenities:</strong> Swimming Pool, Gym, Elevator</div>
+        <div class="modal-spec-item"><strong>Ownership:</strong> Clear Title / Ready to Move</div>
+      </div>
+
+      <a href="#contact" onclick="closeDetailsModal()" class="btn-submit" style="display: block; text-align: center; text-decoration: none; margin-top: 20px;">ENQUIRE ABOUT THIS PROPERTY</a>
+    </div>
+  </div>
+
+  <!-- Calculator Section -->
+  <section id="calculator" class="section-container">
+    <div class="section-header">
+      <h3>FINANCIAL PLANNING</h3>
+      <h2>Karnataka Home Loan & Stamp Duty Calculator</h2>
+    </div>
+
+    <div class="calculator-card">
+      <div>
+        <div class="form-group">
+          <label>Property Value</label>
+          <input type="text" value="₹ 5,00,00,000">
+        </div>
+        <div class="form-group">
+          <label>Interest Rate (%)</label>
+          <input type="text" value="8.5">
+        </div>
+        <div class="form-group">
+          <label>Loan Tenure</label>
+          <select><option>20 Years</option></select>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; justify-content: center;">
+        <p style="font-size: 0.85rem; color: var(--text-muted);">ESTIMATED MONTHLY INSTALLMENT (EMI)</p>
+        <div class="emi-display">₹ 3,46,882</div>
+        <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 5px;">Includes Karnataka 5% Stamp Duty + 1% Registration Charge.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section id="contact" class="section-container">
+    <div class="contact-grid">
+      <div>
+        <h3 style="color: var(--accent-orange); font-size: 0.8rem;">DIRECT CONSULTATION</h3>
+        <h2 style="margin-bottom: 15px;">Get In Touch With Sanjeev Bajoria</h2>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">
+          For property acquisitions, landowner Joint Development Agreements (JDAs), or portfolio advisory in Bengaluru.
+        </p>
+        <p style="margin-bottom: 8px;"><strong>Principal Executive:</strong> Sanjeev Bajoria</p>
+        <p style="margin-bottom: 8px;"><strong>Direct Line:</strong> +91 99166 43255</p>
+        <p><strong>Email:</strong> arwinrealtors@gmail.com</p>
+      </div>
+
+      <form>
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" placeholder="e.g. Anand Sharma">
+        </div>
+        <div class="form-group">
+          <label>Contact Phone (+91) *</label>
+          <input type="text" value="99166 43255">
+        </div>
+        <div class="form-group">
+          <label>Requirement Type</label>
+          <select><option>Outright Property Purchase</option></select>
+        </div>
+        <div class="form-group">
+          <label>Requirement Details</label>
+          <textarea rows="3" placeholder="Specify budget, area requirements, Khata status, etc."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">SEND DIRECT INQUIRY</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <h3 style="color: var(--accent-gold); margin-bottom: 5px;">Arwin Estates</h3>
+      <p>© 2026 Arwin Estates and Properties. Operating in Bengaluru, Karnataka since 1995.</p>
+    </div>
+    <div>
+      <p>Direct Contact: <strong>Sanjeev Bajoria (Proprietor)</strong></p>
+      <p>📍 Bengaluru, Karnataka, India | 📞 +91 99166 43255</p>
+    </div>
+  </footer>
+
+  <script>
+    function openDetailsModal() {
+      document.getElementById('detailsModal').classList.add('active');
+    }
+
+    function closeDetailsModal() {
+      document.getElementById('detailsModal').classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>
